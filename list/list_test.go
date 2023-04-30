@@ -17,6 +17,9 @@ func TestPush(t *testing.T) {
 	if *l.ElementAt(0) != 0 {
 		t.Fatalf("Expected 0 got: %d\n", *l.ElementAt(0))
 	}
+	if l.length != 1 {
+		t.Fatalf("Expected length of 1, got: %d\n", l.length)
+	}
 }
 
 func TestAddElementAt(t *testing.T) {
@@ -43,6 +46,9 @@ func TestAddAt(t *testing.T) {
 	if *l.ElementAt(1) != 1 {
 		t.Fatalf("Expected 1 got: %d", *l.ElementAt(1))
 	}
+	if l.length != 3 {
+		t.Fatalf("Expected length of 3, got: %d\n", l.length)
+	}
 }
 
 func TestReverse(t *testing.T) {
@@ -62,6 +68,9 @@ func TestReverse(t *testing.T) {
 	}
 	if *l.ElementAt(2) != 0 {
 		t.Fatalf("Expected 0, got: %d", *l.ElementAt(2))
+	}
+	if l.length != 3 {
+		t.Fatalf("Expected length of 3, got: %d\n", l.length)
 	}
 }
 
@@ -88,6 +97,10 @@ func TestPop(t *testing.T) {
 	if *l.ElementAt(0) != 1 {
 		t.Fatalf("After pop expected 1, got: %d\n", *l.ElementAt(0))
 	}
+	if l.length != 2 {
+		t.Fatalf("Expected length of 2, got: %d\n", l.length)
+	}
+
 }
 
 func TestRemoveAt(t *testing.T) {
@@ -100,6 +113,10 @@ func TestRemoveAt(t *testing.T) {
 	l.RemoveAt(1)
 	if *l.ElementAt(1) != 2 {
 		t.Fatalf("After pop expected 2, got: %d\n", *l.ElementAt(0))
+	}
+
+	if l.length != 2 {
+		t.Fatalf("Expected length of 2, got: %d\n", l.length)
 	}
 }
 
